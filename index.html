@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oliver & Isabella | Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="aura-bg"></div>
+    <div class="glass-overlay"></div>
+
+    <div class="music-player" onclick="toggleMusic()">
+        <i id="music-icon" class="fas fa-music"></i>
+        <audio id="bg-music" loop>
+            <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-pill">
+            <ul>
+                <li><a href="#home" class="nav-link active">HOME</a></li>
+                <li><a href="#story" class="nav-link">STORY</a></li>
+                <li><a href="#location" class="nav-link">LOCATION</a></li>
+                <li><a href="#rsvp" class="nav-link">RSVP</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+        <section id="home" class="scroll-section">
+            <div class="hero-content">
+                <span class="top-label">SAVE THE DATE</span>
+                <h1>Oliver & Isabella</h1>
+                <p class="subtitle">ARE GETTING MARRIED</p>
+                
+                <div class="countdown-wrap">
+                    <div class="circle-item">
+                        <svg><circle cx="45" cy="45" r="40"></circle><circle id="days-c" cx="45" cy="45" r="40"></circle></svg>
+                        <div class="text"><span id="days">00</span><p>Days</p></div>
+                    </div>
+                    <div class="circle-item">
+                        <svg><circle cx="45" cy="45" r="40"></circle><circle id="hours-c" cx="45" cy="45" r="40"></circle></svg>
+                        <div class="text"><span id="hours">00</span><p>Hrs</p></div>
+                    </div>
+                    <div class="circle-item">
+                        <svg><circle cx="45" cy="45" r="40"></circle><circle id="mins-c" cx="45" cy="45" r="40"></circle></svg>
+                        <div class="text"><span id="mins">00</span><p>Min</p></div>
+                    </div>
+                    <div class="circle-item">
+                        <svg><circle cx="45" cy="45" r="40"></circle><circle id="secs-c" cx="45" cy="45" r="40"></circle></svg>
+                        <div class="text"><span id="secs">00</span><p>Sec</p></div>
+                    </div>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="#rsvp" class="rsvp-link-btn">RSVP NOW</a>
+                </div>
+
+                <div class="date-brief">SEPTEMBER 12, 2026 • LONDON, UK</div>
+                <a href="#story" class="scroll-indicator"><i class="fas fa-chevron-down"></i></a>
+            </div>
+        </section>
+
+        <section id="story" class="scroll-section">
+            <div class="story-container">
+                <div class="section-title">
+                    <span class="top-label">OUR JOURNEY</span>
+                    <h2>How It All Began</h2>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item left">
+                        <div class="glass-card timeline-content">
+                            <div class="timeline-date">JUNE 2020</div>
+                            <h4>The First Meeting</h4>
+                            <p>A chance encounter at a local coffee shop. What we thought was a brief meeting turned into a lifetime of love and late-night conversations.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item right">
+                        <div class="glass-card timeline-content">
+                            <div class="timeline-date">AUGUST 2022</div>
+                            <h4>First Adventure</h4>
+                            <p>Our first trip away to the coast. Exploring hidden beaches and watching the sunset made us realize we were perfect partners for life.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item left">
+                        <div class="glass-card timeline-content">
+                            <div class="timeline-date">DECEMBER 2024</div>
+                            <h4>The Proposal</h4>
+                            <p>Under the sparkling city lights, Oliver asked the big question. With a joyful "Yes!", our forever officially began.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="location" class="scroll-section">
+            <div class="location-container">
+                <div class="glass-card location-info">
+                    <span class="top-label">THE VENUE</span>
+                    <h2>St. Mary's Cathedral</h2>
+                    <p class="venue-address">123 Wedding Lane, West London, UK</p>
+                    <div class="venue-details">
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <div><strong>Ceremony</strong><p>Starts at 3:00 PM</p></div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-glass-cheers"></i>
+                            <div><strong>Reception</strong><p>Dinner & Dancing to follow</p></div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-rsvp outline">GET DIRECTIONS</a>
+                </div>
+                <div class="glass-card map-card">
+                    <iframe src="https://www.google.com/maps/embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="rsvp" class="scroll-section">
+            <div class="glass-card rsvp-expanded">
+                <div class="section-title">
+                    <span class="top-label">RSVP</span>
+                    <h2>Are You Coming?</h2>
+                    <p>Kindly respond by August 1st, 2026</p>
+                </div>
+                <form id="rsvpForm" class="rsvp-form-grid">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Attendance</label>
+                        <select required>
+                            <option value="" disabled selected>Attendance</option>
+                            <option value="yes">Accepts with Pleasure</option>
+                            <option value="no">Declines with Regret</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Message / Dietary Needs</label>
+                        <textarea placeholder="Message (Optional)"></textarea>
+                    </div>
+                    <button type="submit" class="btn-rsvp full-width">SEND RESPONSE & GO HOME</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
