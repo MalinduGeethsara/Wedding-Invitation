@@ -40,7 +40,7 @@ body { font-family: 'Lato', sans-serif; color: var(--text-dark); background-colo
 .hero-content h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 10vw, 5.5rem); color: #8c734b; }
 .top-label { letter-spacing: 6px; color: var(--gold); font-weight: bold; display: block; margin-bottom: 10px; }
 
-/* STORY CONTAINER (Increased Size) */
+/* STORY */
 .story-container { width: 100%; max-width: 1000px; }
 .section-title { text-align: center; margin-bottom: 60px; }
 .section-title h2 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 4rem); color: #8c734b; }
@@ -71,7 +71,7 @@ body { font-family: 'Lato', sans-serif; color: var(--text-dark); background-colo
 .rsvp-expanded { max-width: 800px; width: 100%; padding: 60px !important; text-align: center; }
 .rsvp-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; text-align: left; }
 .full-width { grid-column: span 2; }
-input, select, textarea { padding: 15px; border: 1px solid #eee; background: rgba(255,255,255,0.8); width: 100%; outline: none; border-radius: 5px; }
+input, select, textarea { padding: 15px; border: 1px solid #eee; background: rgba(255,255,255,0.8); width: 100%; outline: none; border-radius: 5px; font-family: inherit; }
 textarea { height: 120px; }
 .btn-rsvp { background: var(--gold); color: white; border: none; padding: 18px; cursor: pointer; font-weight: bold; width: 100%; transition: 0.3s; border-radius: 5px; }
 .btn-rsvp:hover { background: #967648; }
@@ -92,12 +92,26 @@ svg circle:nth-child(2) { stroke: var(--gold); stroke-dasharray: 251; stroke-das
 .glass-card { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.4); box-shadow: 0 10px 40px rgba(0,0,0,0.05); border-radius: 10px; }
 .music-player { position: fixed; bottom: 30px; right: 30px; background: var(--gold); color: #fff; width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 2000; }
 
+/* MOBILE RESPONSIVENESS FIXES */
 @media (max-width: 900px) {
-    .location-container, .rsvp-form-grid { grid-template-columns: 1fr; }
+    .location-container { grid-template-columns: 1fr; }
+    
+    /* Keep RSVP row side-by-side on mobile */
+    .rsvp-form-grid { 
+        grid-template-columns: 1fr 1fr; /* Force two columns */
+        gap: 10px; /* Tighter gap for small screens */
+    }
+    
+    .rsvp-expanded { padding: 30px 15px !important; }
+    
     .map-card { height: 300px; order: -1; }
     .timeline::after { left: 31px; }
     .timeline-item { width: 100%; padding-left: 70px; text-align: left !important; }
     .timeline-item::after { left: 23px; }
     .right { left: 0; }
     .timeline-content { padding: 25px !important; }
+    
+    /* Optional: Shrink text on mobile so labels don't wrap weirdly */
+    .form-group label { font-size: 0.8rem; }
+    input, select { padding: 10px; font-size: 0.9rem; }
 }
