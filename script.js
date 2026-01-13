@@ -1,38 +1,3 @@
-// --- MUSIC AUTO-UNLOCK & TOGGLE ---
-const audio = document.getElementById("bg-music");
-const musicIcon = document.getElementById("music-icon");
-const musicBtn = document.getElementById("musicBtn");
-let isMusicStarted = false;
-
-function startMusic() {
-    if (!isMusicStarted) {
-        audio.play().then(() => {
-            isMusicStarted = true;
-            musicIcon.className = "fas fa-pause";
-            musicBtn.style.animation = "none"; // Stop pulsing
-            window.removeEventListener('click', startMusic);
-            window.removeEventListener('scroll', startMusic);
-            window.removeEventListener('touchstart', startMusic);
-        }).catch(() => {});
-    }
-}
-
-window.addEventListener('click', startMusic);
-window.addEventListener('scroll', startMusic);
-window.addEventListener('touchstart', startMusic);
-
-function toggleMusic() {
-    isMusicStarted = true;
-    musicBtn.style.animation = "none";
-    if (audio.paused) {
-        audio.play();
-        musicIcon.className = "fas fa-pause";
-    } else {
-        audio.pause();
-        musicIcon.className = "fas fa-music";
-    }
-}
-
 // --- SCROLL SPY & TIMELINE ---
 window.addEventListener('scroll', () => {
     let current = "";
@@ -41,7 +6,7 @@ window.addEventListener('scroll', () => {
     const timelineItems = document.querySelectorAll('.timeline-item');
     const scrollArrow = document.querySelector(".scroll-indicator");
 
-    if (window.pageYOffset > 100 && scrollArrow) { scrollArrow.style.opacity = "0"; } 
+    if (window.pageYOffset > 100) { scrollArrow.style.opacity = "0"; } else { scrollArrow.style.opacity = "1"; }
 
     timelineItems.forEach(item => {
         if (item.getBoundingClientRect().top < window.innerHeight - 100) {
@@ -71,7 +36,7 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
     document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
 });
 
-// --- COUNTDOWN ---
+// --- COUNTDOWN LOGIC ---
 const weddingDate = new Date("Sep 12, 2026 15:00:00").getTime();
 function updateCircle(id, val, max) {
     const offset = 251 - (val / max) * 251;
@@ -97,3 +62,10 @@ setInterval(() => {
     updateCircle("mins-c", m, 60);
     updateCircle("secs-c", s, 60);
 }, 1000);
+
+// --- MUSIC ---
+const audio = document.getElementById("bg-music");
+function toggleMusic() {
+    if (audio.paused) { audio.play(); document.getElementById("music-icon").className = "fas fa-pause"; }
+    else { audio.pause(); document.getElementById("music-icon").className = "fas fa-music"; }
+}
