@@ -126,34 +126,39 @@
             </div>
         </section>
 
-        <section id="rsvp" class="scroll-section">
-            <div class="glass-card rsvp-expanded">
-                <div class="section-title">
-                    <span class="top-label">RSVP</span>
-                    <h2>Are You Coming?</h2>
-                    <p>Kindly respond by August 1st, 2026</p>
+  <section id="rsvp" class="scroll-section">
+    <div class="glass-card rsvp-expanded">
+        <div class="section-title">
+            <span class="top-label">RSVP</span>
+            <h2>Are You Coming?</h2>
+            <p>Kindly respond by August 1st, 2026</p>
+        </div>
+
+        <form id="rsvpForm" class="rsvp-form-grid">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" placeholder="Full Name" required>
                 </div>
-                <form id="rsvpForm" class="rsvp-form-grid">
-                    <div class="form-group">
-                        <label>Your Name</label>
-                        <input type="text" placeholder="Full Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Attendance</label>
-                        <select required>
-                            <option value="" disabled selected>Attendance</option>
-                            <option value="yes">Accepts with Pleasure</option>
-                            <option value="no">Declines with Regret</option>
-                        </select>
-                    </div>
-                    <div class="form-group full-width">
-                        <label>Message / Dietary Needs</label>
-                        <textarea placeholder="Message (Optional)"></textarea>
-                    </div>
-                    <button type="submit" class="btn-rsvp full-width">SEND RESPONSE & GO HOME</button>
-                </form>
+                <div class="form-group">
+                    <label>Attendance</label>
+                    <select required>
+                        <option value="" disabled selected>Attendance</option>
+                        <option value="yes">Accepts with Pleasure</option>
+                        <option value="no">Declines with Regret</option>
+                    </select>
+                </div>
             </div>
-        </section>
+
+            <div class="form-group full-width">
+                <label>Message / Dietary Needs</label>
+                <textarea placeholder="Message (Optional)"></textarea>
+            </div>
+
+            <button type="submit" class="btn-rsvp full-width">SEND RESPONSE & GO HOME</button>
+        </form>
+    </div>
+</section>
 
     </main>
 
